@@ -1,5 +1,4 @@
 import numpy as np
-import plotting 
 class KnnClassifier:
 
     def __init__(self):
@@ -9,7 +8,7 @@ class KnnClassifier:
         self.Dataset = X
         self.Classes = Y
 
-    def predict(self,x,k):
+    def predict(self,x,k,useExperimentalComputation):
         #get the distances from c
         distances = self.getDatasetDistances(x, self.Dataset, self.Classes)
         #get k-nearest elements
@@ -24,20 +23,40 @@ class KnnClassifier:
             kNearestElementsList.append(selectedElem)
             distances.remove(selectedElem)
         #compute the class of c
-        a = {}
-        for elem in kNearestElementsList:
-            if(elem[1] not in a):
-                a[elem[1]] = 1
-            else:
-                a[elem[1]] += 1
+        if(not useExperimentalComputation):
+            a = {}
+            for elem in kNearestElementsList:
+                if(elem[1] not in a):
+                    a[elem[1]] = 1
+                else:
+                    a[elem[1]] += 1
 
-        maximalElement = 0
-        selectedClass = None
-        for c in a:
-            if(a[c] > maximalElement):
-                maximalElement = a[c]
-                selectedClass = c 
-        return selectedClass 
+            maximalElement = 0
+            selectedClass = None
+            for c in a:
+                if(a[c] > maximalElement):
+                    maximalElement = a[c]
+                    selectedClass = c 
+            return selectedClass 
+        else:
+            a = {}
+            b = {}
+            for elem in kNearestElementsList:
+                if(elem[1] not in a):
+                    a[elem[1]] = elem[0]
+                    b[elem[1]] = 1
+                else:
+                    a[elem[1]] += elem[0]
+                    b[elem[1]] += 1
+            for c in b:
+                a[c] /= b[c]
+            minimalElement = 10e10
+            selectedClass = None
+            for c in a:
+                if(a[c] < minimalElement):
+                    minimalElement = a[c]
+                    selectedClass = c 
+            return selectedClass 
   
     def getDatasetDistances(self, x, dataset, classes):
         distances = []

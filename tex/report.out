@@ -1,13 +1,17 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [2][-]{subsection.1.1}{Datasets}{section.1}% 2
 \BOOKMARK [1][-]{section.2}{Methods/Models}{}% 3
-\BOOKMARK [2][-]{subsection.2.1}{k-nearest-Neighbor classifier}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.2}{Classification tree}{section.2}% 5
-\BOOKMARK [1][-]{section.3}{Bayes Experiment}{}% 6
-\BOOKMARK [1][-]{section.4}{kNN Experiment}{}% 7
-\BOOKMARK [2][-]{subsection.4.1}{Data}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.2}{Results}{section.4}% 9
-\BOOKMARK [1][-]{section.5}{Discussion}{}% 10
-\BOOKMARK [1][-]{section.6}{Further Features}{}% 11
-\BOOKMARK [2][-]{subsection.6.1}{Data Features}{section.6}% 12
-\BOOKMARK [2][-]{subsection.6.2}{kNN Features}{section.6}% 13
+\BOOKMARK [2][-]{subsection.2.1}{Bayes classifier}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.2}{k-nearest-Neighbor classifier}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.3}{Decision tree classifier}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Bayes experiment}{}% 7
+\BOOKMARK [1][-]{section.4}{KNN experiment}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{Data}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.2}{Results}{section.4}% 10
+\BOOKMARK [1][-]{section.5}{Desision tree experiment}{}% 11
+\BOOKMARK [2][-]{subsection.5.1}{Data}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.2}{Results}{section.5}% 13
+\BOOKMARK [1][-]{section.6}{Discussion}{}% 14
+\BOOKMARK [1][-]{section.7}{Further improvement/thoughs}{}% 15
+\BOOKMARK [2][-]{subsection.7.1}{Data improvements}{section.7}% 16
+\BOOKMARK [2][-]{subsection.7.2}{kNN improvments}{section.7}% 17
