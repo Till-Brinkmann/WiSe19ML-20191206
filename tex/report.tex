@@ -46,19 +46,25 @@ This is an template for a report. You may use the outline or change it freely. T
 
 \section{Methods/Models}
 Which classifiers are used? How do they classify/differ?
-\initials{FGM}
 
-\section{Experiments}
-Which tests were done in the experiments? What was implemented? What measurement are used in the results?
+\subsection{k-nearest-Neighbor classifier}
+The knn classifier represent the data on a n-dimational space and in this space the distance of dataset element to the new element is calculated by a specific metric. In the given case, the p-Norm with p = 1 is used, because the dataset vector entries are zero or one, so the relative distance will stay the same.
+After the distance calculation, the k closest dataset points to the new element are chosen. Now the new data has to be classified by those selected dataset points. There are multiple approaches. The naive apporach would be to select the class that appears on the selected data most often. More ideas are disscussed below.
+\initials{MA}
+\subsection{Classification tree}
+The classfier structures the trainingsdata as a tree, so the 
+\initials{MA}
+\section{Bayes Experiment}
+
+\section{kNN Experiment}
+The knn-algorithm was implemented as a class in python. A method was saving the training set and its outputs in two variables. With the second method "predict(element,k)" the estimated class for a new element was returned. In short, it calculated the distance in a help method for every data in the trainings set. Then it iterates through that list and selects the k-nearest elements. Form the selected elements the class is chosen that appears the most in these elements.
+
+\initials{MA}
 \subsection{Data}
-Which data are used? What are their characteristics?
-\initials{SGM}
+The two given datasets were used to test the classifier. The datasets were split in two parts. The testset contains 20 elements from the data set. The other data is used as the trainingset. Every data from the testset will be classified for a k = 1..10. As seen in the graphics bellow, there is not significant difference between the balanced and unbalanced dataset. The kNN only classifies with selected element not the whole dataset, so it is only the dependent how the classes in the dataset are distributed.
 
-\subsection{Feature Extraction}
-Which features are generated for the experiments?
-\initials{TGM}
-
-\subsection{Awesome results}
+\initials{MA}
+\subsection{Results}
 
 \begin{figure}[h]
 \centering
@@ -92,7 +98,45 @@ You can also refer to Table~\ref{tab_example}.
 \initials{FGM}
 
 \section{Discussion}
-Short summery and future work.
-\initials{SGM/TGM}
+As seen in the results some classifiers are more suited for specific tasks.
+\initials{TB/MA}
 
+\section{Further Features}
+\subsection{Data Features}
+Treegramms
+\initials{TB}
+\subsection{kNN Features}
+The kNNs selection of the class only the depends on the number of occurences of a certain class. It could be reasonable to include the distance, because the following problem could occur:
+Assume k = 4. 3 elements are from the class 1 and 1 element is from the class 0. Normally, the data would be classified as 1, but if the distances of the class 1 elements are far away and the element with class 0 is a lot closer it could be more reasonable to classify the new data as class 0.
+To include the distance as a new parameter to the calculation, the average distance from the new data and a specific class could be calculated and the compared. With this change, we get the following result for the same setup presented in the results above:
+\begin{figure}[h]
+\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+\caption{Results}
+\label{fig_res}
+\end{figure}
+
+
+You can refer to Figure~\ref{fig_res}.
+\begin{table}[h]
+\caption{An Example of a Table}
+\label{tab_example}
+\centering
+% Some packages, such as MDW tools, offer better commands for making tables
+% than the plain LaTeX2e tabular which is used here.
+\begin{tabular}{c||c|c|c}
+Data & Method 1 & Method 2 & Method 3\\
+\hline\hline
+data 1 &0.54 & 0.6& 0.98\\
+\hline
+data 2 &0.74 & 0.54& 0.48\\
+\hline
+data 3 &0.82 & 0.71& 0.67
+\end{tabular}
+\end{table}
+
+\initials{MA}  
 \end{document}

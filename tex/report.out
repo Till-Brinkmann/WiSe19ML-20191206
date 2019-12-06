@@ -1,8 +1,13 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [2][-]{subsection.1.1}{Datasets}{section.1}% 2
 \BOOKMARK [1][-]{section.2}{Methods/Models}{}% 3
-\BOOKMARK [1][-]{section.3}{Experiments}{}% 4
-\BOOKMARK [2][-]{subsection.3.1}{Data}{section.3}% 5
-\BOOKMARK [2][-]{subsection.3.2}{Feature Extraction}{section.3}% 6
-\BOOKMARK [2][-]{subsection.3.3}{Awesome results}{section.3}% 7
-\BOOKMARK [1][-]{section.4}{Discussion}{}% 8
+\BOOKMARK [2][-]{subsection.2.1}{k-nearest-Neighbor classifier}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.2}{Classification tree}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Bayes Experiment}{}% 6
+\BOOKMARK [1][-]{section.4}{kNN Experiment}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{Data}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{Results}{section.4}% 9
+\BOOKMARK [1][-]{section.5}{Discussion}{}% 10
+\BOOKMARK [1][-]{section.6}{Further Features}{}% 11
+\BOOKMARK [2][-]{subsection.6.1}{Data Features}{section.6}% 12
+\BOOKMARK [2][-]{subsection.6.2}{kNN Features}{section.6}% 13
