@@ -39,14 +39,22 @@
 \end{center}
 
 \section{Introduction}
-This is an template for a report. You may use the outline or change it freely. There are no directives.
 \subsection{Datasets}
-"dataset1"
-
+Both datasets have strings of the characters [A..Z] as data, with an average length of 6 characters.
+\begin{itemize}
+	\item Dataset1 consists of 5493 datapoints. There are 2 different classes. Class 0 appears 4274 times in the set while the other 1219 datapoints are in class 1.
+	\item For Dataset2 there are 2002 datapoints in class 0, 2000 in class 1 and 1999 in the third class.
+\end{itemize}
+\initials{TB}
+\subsection{Feature Extraction}
+As suggested, we used bigram occurences as our features. This makes the input for the classifiers a vector containing ones or zeros with the size $26^2=676 $.
+\initials{TB}
 
 \section{Methods/Models}
-Which classifiers are used? How do they classify/differ?
-\initials{FGM}
+\subsection{Naive Bayes Classifier}
+	As the first model we chose a Naive Bayes classifier. This model uses a probability given by a simplified Bayes formula (with P(X) always 1) for determining the most likely class for an input X: $$h(x) = \underset{c \in Y}{\arg \max}\ P(X = x | Y = c)*P(Y=c)$$\\
+	We defined $P(X = x | Y = c) = 1 - \frac{|x-x_{c,avg}|}{k}$ where $ x,x_{c,avg} \in \mathbb{R}^k, x_{c,avg} = (1\ if\ \frac{1}{|X|}*\sum_{\{x_i \in X | y_i=c\}} x_i > 0.5,\ 0\ otherwise)_k$. This can be described as one minus the normalized distance between x and a median of all $\{x_n \in X| y_n = c\}$.
+\initials{TB}
 
 \section{Experiments}
 Which tests were done in the experiments? What was implemented? What measurement are used in the results?
@@ -54,11 +62,13 @@ Which tests were done in the experiments? What was implemented? What measurement
 Which data are used? What are their characteristics?
 \initials{SGM}
 
-\subsection{Feature Extraction}
-Which features are generated for the experiments?
-\initials{TGM}
 
-\subsection{Awesome results}
+\subsection{Results}
+
+
+\section{Discussion}
+Short summary and future work.
+\initials{SGM/TGM}
 
 \begin{figure}[h]
 \centering
@@ -90,9 +100,5 @@ data 3 &0.82 & 0.71& 0.67
 \end{table}
 You can also refer to Table~\ref{tab_example}.
 \initials{FGM}
-
-\section{Discussion}
-Short summery and future work.
-\initials{SGM/TGM}
 
 \end{document}
