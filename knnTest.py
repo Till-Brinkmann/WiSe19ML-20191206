@@ -8,13 +8,20 @@ data1 = np.load("dataset2.npz")
 X = np.array([extract_features_bigram(x) for x in data1["X"]]) 
 Y = data1["y"]
 
+print(X)
+print(Y)
+
 #split 50 data elements from the dataset
 
-shuffled = np.shuffle(np.array([(X[i],Y[i]) for i in range(X.shape[0])]))
-X = np.array([shuffled[0][i] for i in range(X.shape[0])])
-Y = np.array([shuffled[1][i] for i in range(Y.shape[0])])
+shuffled = np.array([(X[i],Y[i]) for i in range(X.shape[0])])
+np.random.shuffle(shuffled)
+X = np.array([shuffled[i][0] for i in range(X.shape[0])])
+Y = np.array([shuffled[i][1] for i in range(Y.shape[0])])
 
-testsize = 20
+print(X)
+print(Y)
+
+testSize = 20
 
 datasets = np.split(X,[X.shape[0]-testSize])
 classes = np.split(Y,[Y.shape[0]-testSize])
